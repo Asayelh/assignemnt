@@ -3,6 +3,8 @@ package assignment;
 import junit.Tests;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 import java.awt.*;
@@ -29,12 +31,17 @@ public class assig4  extends Tests {
         driver.findElement(By.xpath("//a[contains(@href,'/?ref_=footer_logo')]")).click();
 
 
+       /////// //When I use JavaScript,robot does not work
+//        JavascriptExecutor js = (JavascriptExecutor) driver;
+//        WebElement amazonLogo = driver.findElement(By.xpath("//a[contains(@href,'/?ref_=footer_logo')]"));
+//        js.executeScript("arguments[0].click();", amazonLogo);
+//        amazonLogo.click();
+
+
 //       Use Actions to type "ClarusWay" in the search box and perform the search
         Actions actions = new Actions(driver);
         By search = By.xpath("//input[@id='twotabsearchtextbox']");
         actions.moveToElement(driver.findElement(search)).click().sendKeys("ClarusWay").perform();
-
-
 
 
     }
