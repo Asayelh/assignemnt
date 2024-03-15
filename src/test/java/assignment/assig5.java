@@ -23,8 +23,8 @@ public class assig5 extends Tests {
         for (Cookie cookie : cookies) {
             System.out.println("Name: " + cookie.getName() + ", Value: " + cookie.getValue());
         }
-        driver.manage().addCookie(new Cookie("exampleCookie", "exampleValue"));
-        driver.manage().deleteCookieNamed("exampleCookie");
+        driver.manage().addCookie(new Cookie("data", "wd"));
+        driver.manage().deleteCookieNamed("data");
         driver.manage().deleteAllCookies();
 
 
