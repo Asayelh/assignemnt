@@ -25,14 +25,15 @@ public class assig2 extends Tests {
         driver.get("http://demo.guru99.com/test/drag_drop.html");
         Actions actions = new Actions(driver);
         // Drag and drop the BANK button to the Account section in DEBIT SIDE
-        WebElement bankButton = driver.findElement(By.xpath("//a[contains(text(), 'BANK')]"));
+        WebElement bank = driver.findElement(By.xpath("//a[contains(text(), 'BANK')]"));
         WebElement debitAccount = driver.findElement(By.xpath("//ol[@id='bank']"));
+        actions.dragAndDrop(bank, debitAccount).build().perform();
 
-        actions.dragAndDrop(bankButton, debitAccount).build().perform();
+
         //Drag and drop the SALES button to the Account section in CREDIT SIDE
-        WebElement salesButton = driver.findElement(By.xpath("//a[contains(text(), 'SALES')]"));
+        WebElement sales = driver.findElement(By.xpath("//a[contains(text(), 'SALES')]"));
         WebElement creditAccount = driver.findElement(By.xpath("//ol[@id='loan']"));
-        actions.dragAndDrop(salesButton, creditAccount).build().perform();
+        actions.dragAndDrop(sales, creditAccount).build().perform();
 
 
         // Drag and drop the 5000 button to the Amount section in DEBIT SIDE
@@ -45,8 +46,8 @@ public class assig2 extends Tests {
         actions.dragAndDrop(amount5000, creditAmount).build().perform();
 
         // Verify the visibility of Perfect text
-        WebElement perfectText = driver.findElement(By.xpath("//a[contains(text(), 'Perfect')]"));
-        Assertions.assertTrue(perfectText.isDisplayed());
+        WebElement text = driver.findElement(By.xpath("//a[contains(text(), 'Perfect')]"));
+        Assertions.assertTrue(text.isDisplayed());
 
         driver.quit();
 }}
