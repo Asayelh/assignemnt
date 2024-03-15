@@ -14,7 +14,7 @@ public class assig3 extends Tests {
 
         driver.get("https://www.google.com/");
         Actions action = new Actions(driver);
-        action.sendKeys("Scroll Methods").sendKeys(Keys.RETURN).build().perform();
+        action.sendKeys("Scroll Methods").sendKeys(Keys.RETURN).perform();
         String pageitle = driver.getTitle();
         Assert.assertTrue(pageitle.contains("Scroll Methods"));
 
