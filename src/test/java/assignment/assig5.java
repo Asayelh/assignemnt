@@ -20,9 +20,7 @@ public class assig5 extends Tests {
     public void testCooke() {
         driver.get("http://facebook.com");
         Set<Cookie> cookies = driver.manage().getCookies();
-        for (Cookie cookie : cookies) {
-            System.out.println("Name: " + cookie.getName() + ", Value: " + cookie.getValue());
-        }
+        for (Cookie cookie : cookies) System.out.println("Name: " + cookie.getName() + ", Value: " + cookie.getValue());
         driver.manage().addCookie(new Cookie("data", "wd"));
         driver.manage().deleteCookieNamed("data");
         driver.manage().deleteAllCookies();
