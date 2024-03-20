@@ -1,3 +1,8 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
 public class assignment55 {
     //Go to URL: http://crossbrowsertesting.github.io/
     //Click to To-Do App
@@ -9,4 +14,15 @@ public class assignment55 {
     //If our archive link worked, then the following list should have length 4.
     //Assert that this is true as well
     //Doing Cross Browser Testing.
+    WebDriver driver = new ChromeDriver();
+@Test
+    public void toDoApp(){
+    driver.get("http://crossbrowsertesting.github.io/");
+    driver.findElement(By.cssSelector("a[href='todo-app.html']")).click();
+
+
+
+
+
+    }
 }
