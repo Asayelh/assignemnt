@@ -1,20 +1,11 @@
-package assignment;
 
-import junit.Tests;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Cookie;
-import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
-import org.testng.Assert;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import java.awt.*;
-import java.util.Set;
 
-public class assignment51 extends Tests {
+public class assignment51  {
     /*
     Create tests that depend on each other
     Create beforeClass and set up settings.
@@ -24,30 +15,17 @@ public class assignment51 extends Tests {
     Then go to Amazon depending on Google
     Close the driver.
      */
-
-    public class InterdependentTests {
-        @BeforeClass
-        public void setUpSettings() {
-            // Set up necessary settings before running the tests
-        }
-
-        @Test
-        public void testFacebook() {
-            // Go to Facebook and perform necessary assertions and actions
-        }
-
-        @Test(dependsOnMethods = "testFacebook")
-        public void testGoogle() {
-            // Go to Google, assuming Facebook test has passed, and perform necessary assertions and actions
-        }
-
-        @Test(dependsOnMethods = "testGoogle")
-        public void testAmazon() {
-            // Go to Amazon, assuming Google test has passed, and perform necessary assertions and actions
-        }
-
-        @AfterClass
-        public void closeDriver() {
-            // Close the driver and perform necessary cleanup after running the tests
-        }
-    }}
+    WebDriver driver = new ChromeDriver();;
+    @Test
+    public void Facebook() {
+        driver.get("https://www.facebook.com");
+    }
+    @Test(dependsOnMethods = "Facebook")
+    public void Google() {
+        driver.get("https://www.google.com");
+    }
+    @Test(dependsOnMethods = "Google")
+    public void Amazon() {
+        driver.get("https://www.amazon.com");
+    }
+}
