@@ -1,5 +1,3 @@
-package assignment;
-
 public class assignment55 {
     //Go to URL: http://crossbrowsertesting.github.io/
     //Click to To-Do App
