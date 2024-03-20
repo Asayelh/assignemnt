@@ -19,6 +19,8 @@ public class assignment55 {
     public void toDoApp(){
     driver.get("http://crossbrowsertesting.github.io/");
     driver.findElement(By.cssSelector("a[href='todo-app.html']")).click();
+    driver.findElement(By.xpath("//input[@name='todo-4']")).click();
+    driver.findElement(By.xpath("//input[@name='todo-5']")).click();
 
 
 
