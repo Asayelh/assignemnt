@@ -41,7 +41,6 @@ public class assig1 extends Tests {
             driver.switchTo().window(originalWindowHandle);
             Assert.assertEquals(title, "The Internet");
 
-
         }
     }
 
