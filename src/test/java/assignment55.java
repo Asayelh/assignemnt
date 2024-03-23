@@ -28,27 +28,26 @@ public class assignment55 {
     List<WebElement> toDoList = driver.findElements(By.xpath("//span[contains(@class,'done-true')]"));
     int listSize = toDoList.size();
     Assert.assertEquals(listSize, 2, "List length is not as expected");
-    String TextToDoList4 = driver.findElement(By.xpath("//input[contains(@name,'todo-4')]")).getText();
-    String TextToDoList5 = driver.findElement(By.xpath("//input[contains(@name,'todo-2')]")).getText();
+    String toDoList4 = driver.findElement(By.xpath("//input[contains(@name,'todo-4')]")).getText();
+    String toDoList5 = driver.findElement(By.xpath("//input[contains(@name,'todo-2')]")).getText();
 
     toDoList.forEach(item -> {
         String text = item.getText();
-        if (text.equals(TextToDoList4)) {
+        if (text.equals(toDoList4)) {
 
             Assert.assertTrue(true, "Text 'to do 4' not found in checked items");
-
         }
-        if (text.equals(TextToDoList5)) {
-            Assert.assertTrue(true, "Text 'to do 5' not found in checked items");
+        if (text.equals(toDoList5)) {
 
+            Assert.assertTrue(true, "Text 'to do 5' not found in checked items");
         }
     });
     driver.findElement(By.xpath("//a[@ng-click='todoList.archive()']")).click();
+
     List<WebElement> restlist = driver.findElements(By.xpath("//span[@class='done-false']"));
     int total = restlist.size();
     Assert.assertEquals(total, 3);
 }
-
     }
 
 
