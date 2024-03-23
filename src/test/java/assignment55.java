@@ -2,7 +2,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import java.util.List;
@@ -18,7 +22,7 @@ public class assignment55 {
     //If our archive link worked, then the following list should have length 4.
     //Assert that this is true as well
     //Doing Cross Browser Testing.
-    WebDriver driver = new ChromeDriver();
+    WebDriver driver ;
 @Test
     public void toDoApp() {
     driver.get("http://crossbrowsertesting.github.io/");
@@ -35,11 +39,11 @@ public class assignment55 {
         String text = item.getText();
         if (text.equals(toDoList4)) {
 
-            Assert.assertTrue(true, "Text 'to do 4' not found in checked items");
+            Assert.assertTrue(true, "to-do 4 is not present in the list");
         }
         if (text.equals(toDoList5)) {
 
-            Assert.assertTrue(true, "Text 'to do 5' not found in checked items");
+            Assert.assertTrue(true, "to-do 5 is not present in the list");
         }
     });
     driver.findElement(By.xpath("//a[@ng-click='todoList.archive()']")).click();
@@ -48,7 +52,17 @@ public class assignment55 {
     int total = restlist.size();
     Assert.assertEquals(total, 3);
 }
-    }
+
+    @Parameters({"target-browser"})
+    @BeforeClass
+    public void beforeMethod(String targetBrowser){
+        switch (targetBrowser) {
+            case "Chrome" -> driver = new ChromeDriver();
+            case "Firefox" -> driver = new FirefoxDriver();
+            case "Edge" -> driver = new EdgeDriver();
+        } }
+}
+
 
 
 

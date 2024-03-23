@@ -6,4 +6,28 @@
             <class name="assignment52"/>
         </classes>
     </test>
-</suite>
+        <test name="Chrome Test">
+        <parameter name="target-browser" value="Chrome">
+        </parameter>
+        <classes>
+            <class name="assignment55"/>
+        </classes>
+    </test>
+
+    <test name="Edge Test">
+        <parameter name="target-browser" value="Edge">
+        </parameter>
+        <classes>
+            <class name="assignment55"/>
+        </classes>
+    </test>
+
+
+    <test name="FireFox Test">
+        <parameter name="target-browser" value="Firefox">
+        </parameter>
+        <classes>
+            <class name="assignment55"/>
+        </classes>
+    </test>
+  </suite>
